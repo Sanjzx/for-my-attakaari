@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Attakaari 🤍</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif, system-ui; margin: 0; padding: 0; }
+    body { background-color: #fce4ec; color: #4a4a4a; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+    .card { background: #fff5f8; border-radius: 24px; box-shadow: 0 10px 25px rgba(233, 30, 99, 0.15); width: 100%; max-width: 380px; padding: 25px 20px; text-align: center; border: 2px solid #f8bbd0; position: relative; min-height: 520px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    h1 { color: #d81b60; font-size: 22px; font-weight: 700; font-style: italic; margin-bottom: 12px; }
+    h2 { color: #c2185b; font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+    p { color: #666; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+    .btn { background: linear-gradient(135deg, #ec407a, #d81b60); color: white; border: none; border-radius: 30px; padding: 12px 24px; font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3); display: inline-flex; align-items: center; gap: 6px; }
+    .btn:active { transform: scale(0.95); }
+    .nav-btns { display: flex; gap: 10px; justify-content: center; width: 100%; }
+    .btn-secondary { background: #f8bbd0; color: #880e4f; box-shadow: none; }
+    .sticker { font-size: 65px; margin-bottom: 15px; }
+    .screen { display: none; width: 100%; flex-direction: column; align-items: center; }
+    .screen.active { display: flex; }
+    
+    /* Letter Screen */
+    .envelope { background: #fff; border: 2px solid #f48fb1; border-radius: 16px; padding: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; }
+    .envelope p { color: #4a4a4a; font-size: 13.5px; margin-bottom: 10px; }
+    
+    /* Meter Screen */
+    .progress-bar { width: 100%; background: #eedbe1; height: 16px; border-radius: 10px; overflow: hidden; margin: 15px 0; }
+    .fill { width: 0%; height: 100%; background: linear-gradient(90deg, #ff80ab, #d81b60); transition: width 0.3s ease; }
+    .heart-btn { background: #ff4081; color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+    
+    /* Bribes Screen */
+    .coupon { background: white; border-radius: 14px; padding: 12px; border: 1px solid #f8bbd0; margin-bottom: 10px; width: 100%; text-align: center; }
+    .coupon-title { font-weight: 700; color: #ad1457; font-size: 14px; margin-bottom: 4px; }
+    .coupon-sub { font-size: 12px; color: #777; margin: 0; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Screen 1: Start -->
+  <div class="screen active" id="s1">
+    <div class="sticker">🥺</div>
+    <h1>I Messed Up, attakaari 🤍</h1>
+    <p>But I'm ready to make it right.</p>
+    <button class="btn" onclick="nextScreen('s2')">Listen to my heart 💖</button>
+  </div>
+
+  <!-- Screen 2: Step 1 -->
+  <div class="screen" id="s2">
+    <div class="sticker">🐰</div>
+    <h2>I Know I Hurt You</h2>
+    <p>I messed up... and I'm really sorry for that.</p>
+    <div class="nav-btns">
+      <button class="btn btn-secondary" onclick="nextScreen('s1')">← Back</button>
+      <button class="btn" onclick="nextScreen('s3')">Next →</button>
+    </div>
+  </div>
+
+  <!-- Screen 3: Step 2 -->
+  <div class="screen" id="s3">
+    <div class="sticker">🐻🤍🐼</div>
+    <h2>You Mean Everything</h2>
+    <p>Don't worry, all will be good. Life will change to a good phase. I'll always be with you in your hard times & happy times also 🤍 Stay forever with me always.</p>
+    <div class="nav-btns">
+      <button class="btn btn-secondary" onclick="nextScreen('s2')">← Back</button>
+      <button class="btn" onclick="nextScreen('s4')">Next →</button>
+    </div>
+  </div>
+
+  <!-- Screen 4: Step 3 -->
+  <div class="screen" id="s4">
+    <div class="sticker">😭</div>
+    <h2>I'm Truly Sorry</h2>
+    <p>Please forgive me... You mean so much to me, attakaari 🤍.</p>
+    <div class="nav-btns">
+      <button class="btn btn-secondary" onclick="nextScreen('s3')">← Back</button>
+      <button class="btn" onclick="nextScreen('s5')">Next →</button>
+    </div>
+  </div>
+
+  <!-- Screen 5: Letter Envelope -->
+  <div class="screen" id="s5">
+    <div class="sticker" style="cursor:pointer;" onclick="nextScreen('s6')">✉️</div>
+    <p><b>CLICK TO OPEN 💕</b></p>
+  </div>
+
+  <!-- Screen 6: Virtual Peace Offering -->
+  <div class="screen" id="s6">
+    <h2 style="font-size: 15px; color: #ad1457; text-transform: uppercase;">A Virtual Peace Offering 💕</h2>
+    <div class="envelope">
+      <p><b>My Dearest attakaari 🤍,</b></p>
+      <p>I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺</p>
+      <p>Please forgive me if I hurt you or wasted even a little of your precious time. I promise I didn't mean to. 🥺🤍</p>
+    </div>
+    <br>
+    <button class="btn" onclick="nextScreen('s7')">Continue ✨</button>
+  </div>
+
+  <!-- Screen 7: Forgiveness Meter -->
+  <div class="screen" id="s7">
+    <h2>FORGIVENESS METER ❤️</h2>
+    <div class="sticker" id="meterSticker">🐻</div>
+    <div class="progress-bar"><div class="fill" id="fill"></div></div>
+    <p id="meterText" style="font-weight: 700; color: #ad1457; margin-bottom: 10px;">0% FORGIVEN</p>
+    <p id="instructionText">TAP THE HEART TO HEAL MY HEART!</p>
+    <br>
+    <button class="heart-btn" id="heartBtn" onclick="boostForgiveness()">❤️</button>
+    <button class="btn" id="enoughBtn" style="display:none;" onclick="nextScreen('s8')">CLAIM BRIBES 🎁</button>
+  </div>
+
+  <!-- Screen 8: Bribes -->
+  <div class="screen" id="s8">
+    <div class="coupon">
+      <div class="coupon-title">🌸 FRESH BLOOMS 🌸</div>
+      <div class="coupon-sub">Valid for 1 bouquet delivery + unlimited forehead kisses 💕</div>
+    </div>
+    <div class="coupon">
+      <div class="coupon-title">🧸 CUDDLE PASS 🧸</div>
+      <div class="coupon-sub">Valid for unlimited hugs, cuddles & no drama day</div>
+    </div>
+    <div class="coupon">
+      <div class="coupon-title">🍫 SWEET TREAT 🍫</div>
+      <div class="coupon-sub">Valid for your favorite chocolate + my full attention 😊</div>
+    </div>
+    <br>
+    <button class="btn" onclick="nextScreen('s9')">ENOUGH BRIBES! ❤️</button>
+  </div>
+
+  <!-- Screen 9: Peace Treaty Signed -->
+  <div class="screen" id="s9">
+    <div class="sticker">💌</div>
+    <h2>PEACE TREATY SIGNED! 🕊️</h2>
+    <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #ad1457;">New Beginnings Ahead</p>
+    <p>Thank you for being the most forgiving and wonderful person. I love you to the moon and back and I'm never letting go! 💚🌸</p>
+  </div>
+
+</div>
+
+<script>
+  function nextScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  let percent = 0;
+  function boostForgiveness() {
+    if (percent < 100) {
+      percent += 20;
+      document.getElementById('fill').style.width = percent + '%';
+      document.getElementById('meterText').innerText = percent + '% FORGIVEN';
+      
+      if (percent >= 100) {
+        document.getElementById('meterText').innerText = "100% FORGIVEN! YOU'RE FORGIVEN! 💕";
+        document.getElementById('instructionText').innerText = "Yay! My heart is full again! 🎉";
+        document.getElementById('heartBtn').style.display = 'none';
+        document.getElementById('enoughBtn').style.display = 'inline-flex';
+        document.getElementById('meterSticker').innerText = "🥰";
+      }
+    }
+  }
+</script>
+</body>
+</html>
