@@ -28,11 +28,6 @@
     .fill { width: 0%; height: 100%; background: linear-gradient(90deg, #ff80ab, #d81b60); transition: width 0.3s ease; }
     .heart-btn { background: #ff4081; color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4); animation: pulse 1.5s infinite; }
     @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-    
-    /* Bribes Screen */
-    .coupon { background: white; border-radius: 14px; padding: 12px; border: 1px solid #f8bbd0; margin-bottom: 10px; width: 100%; text-align: center; }
-    .coupon-title { font-weight: 700; color: #ad1457; font-size: 14px; margin-bottom: 4px; }
-    .coupon-sub { font-size: 12px; color: #777; margin: 0; }
   </style>
 </head>
 <body>
@@ -91,7 +86,7 @@
     <h2 style="font-size: 15px; color: #ad1457; text-transform: uppercase;">A Virtual Peace Offering 💕</h2>
     <div class="envelope">
       <p><b>My Dearest attakaari 🤍,</b></p>
-      <p>I'm really sorry, my girl. I accidentally upset the most precious and adorable person in my life — you. 🥺</p>
+      <p>I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺</p>
       <p>Please forgive me if I hurt you or wasted even a little of your precious time. I promise I didn't mean to. 🥺🤍</p>
     </div>
     <br>
@@ -107,9 +102,9 @@
     <p id="instructionText">TAP THE HEART TO HEAL MY HEART!</p>
     <br>
     <button class="heart-btn" id="heartBtn" onclick="boostForgiveness()">❤️</button>
-    <button class="btn" onclick="nextScreen('s9')">ENOUGH BRIBES! ❤️</button>
+    <!-- Directly redirects to Screen 9 (s9) -->
+    <button class="btn" id="enoughBtn" style="display:none;" onclick="nextScreen('s9')">SEE MESSAGE 💕</button>
   </div>
-  
 
   <!-- Screen 9: Peace Treaty Signed -->
   <div class="screen" id="s9">
